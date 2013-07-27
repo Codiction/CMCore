@@ -1,0 +1,13 @@
+## CORE COMPONENTS (EDITABLE) ##
+economy: true
+shoutcaster: true
+illusia: true
+
+## COMPONENT CONFIGURATIONS (EDITABLE) ##
+economy:
+  ## PLACEHOLDERS: <player> | <balance> | <$> ##
+  currency: $
+  balanceInfo: Your current funds balance is <$><balance>.
+
+## NON-EDITABLE STUFF (things will die if you modify this.. Seriously.) ##
+version: 1.0.0.0
