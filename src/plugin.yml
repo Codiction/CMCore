@@ -1,3 +1,4 @@
 name: CMCore
 description: The Codiction Minecraft Core
-version: 0.0.1
+version: 1.0.0.1
+main: com.codiction.Main

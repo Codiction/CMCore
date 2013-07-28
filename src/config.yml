@@ -7,7 +7,11 @@ illusia: true
 economy:
   ## PLACEHOLDERS: <player> | <balance> | <$> ##
   currency: $
+  increaseOnlineUserBalance:
+    enabled: true
+    increaseValue: 5.25
+    
   balanceInfo: Your current funds balance is <$><balance>.
 
 ## NON-EDITABLE STUFF (things will die if you modify this.. Seriously.) ##
-version: 1.0.0.0
+version: 1.0.0.1
