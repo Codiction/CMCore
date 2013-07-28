@@ -11,6 +11,7 @@
 package com.codiction;
 
 import com.codiction.economy.CMEconomy;
+import com.codiction.util.Message;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,28 +34,24 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         initConfiguration();
     }
-    
-    public void info(String msg) {
-        getLogger().info(ChatColor.translateAlternateColorCodes("&".charAt(0), msg));
-    }
 
     /**
      * Initializes the configuration of the core (config.yml)
      */
     public void initConfiguration() {
         if (!this.getDataFolder().exists()) {
-            info("&3Configuration file is not found, creating new one...&r");
+            Message.info(ChatColor.YELLOW + "Configuration file is not found, creating new one...");
             this.saveDefaultConfig();
         } else {
             config = this.getConfig();
-            info("&3Loading configuration...&r");
+            Message.info(ChatColor.BLUE + "Loading configuration...");
         }
 
         configuredVersion = config.getString("version");
 
         if (!configuredVersion.equals(this.getDescription().getVersion())) {
-            getLogger().severe(ChatColor.RED + "The configuration file cannot be used with this version of CMCore ("
-                    + ChatColor.DARK_GREEN + this.getDescription().getVersion());
+            Message.info(ChatColor.RED + "The configuration file cannot be used with this version of CMCore ("
+                    + ChatColor.GREEN + this.getDescription().getVersion());
             stopPlugin();
             return;
         }

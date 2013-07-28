@@ -11,7 +11,9 @@
 package com.codiction.economy;
 
 import com.codiction.Main;
+import static com.codiction.Main.*;
 import com.codiction.util.CMXStream;
+import com.codiction.util.Message;
 import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -36,10 +38,10 @@ public class CMEconomy {
         this.config = config;
 
         if (!initEconomy()) {
-            main.getLogger().severe(ChatColor.RED + "Economy failed to load! Disabling economy component.");
+            Message.info(ChatColor.RED + "Economy failed to load! Disabling economy component.");
             config.set("economy", false);
         } else {
-            main.info("&aEconomy is online!&r");
+            Message.info(ChatColor.GREEN + "Economy is online!");
             testAccountCreation("Aristocracy101");
         }
     }

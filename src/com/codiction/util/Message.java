@@ -10,10 +10,21 @@
  */
 package com.codiction.util;
 
+import com.codiction.Main;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+
 /**
  *
  * @author Admin
  */
 public class Message {
     
+    static Main main = (Main) Bukkit.getServer().getPluginManager().getPlugin("CMCore");
+    
+    public static void info(String msg) {
+        
+        main.getServer().getConsoleSender().sendMessage("<" + main.getName() + "> " + msg + ChatColor.RESET);
+        
+    }
 }
